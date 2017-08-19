@@ -9,5 +9,6 @@
 ####################################################################
 ####################### HTML #######################################
 
-1. Use disabled as disabled only.
+1. disabled="true" X --- disabled
 2. for <option>, attribute value = (Text between option).toLowerCase()
+3. selected="true" X --- selected
