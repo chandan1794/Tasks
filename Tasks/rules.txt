@@ -4,3 +4,10 @@
 1. HTML class --- camelCase
 2. HTML id --- camelCase
 3. Meteor Template --- camelCase
+
+
+####################################################################
+####################### HTML #######################################
+
+1. Use disabled as disabled only.
+2. for <option>, attribute value = (Text between option).toLowerCase()
