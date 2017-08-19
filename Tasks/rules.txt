@@ -12,3 +12,4 @@
 1. disabled="true" X --- disabled
 2. for <option>, attribute value = (Text between option).toLowerCase()
 3. selected="true" X --- selected
+4. All form elements id, custom classes and names should start with form.
