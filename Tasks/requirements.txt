@@ -1,0 +1,18 @@
+Version 1.1
+Requirements:
+1. Work to be assigned by Person A to Person B.
+2. Registration of all the people
+3. Todo Form: 
+	- Todo
+	- Assigned to
+	- Priority (Low | Middle | High)
+4. Main page to show all todos.
+5. Floating button to add a new todo.
+6. Only the person who the task is assigned to can remove the task from the list.
+7. After task completion the assignee has to confirm that task hass been completed or not.
+8. Options on task
+	For Creator: Edit, Delete, Change Assigned to, Done(only after it is completed)
+	For Assignee: Reject, Complete,
+9. Registration Form:
+	Email id:
+	Password
