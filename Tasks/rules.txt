@@ -1,0 +1,6 @@
+####################################################################
+#######################  Naming Convention #########################
+
+1. HTML class --- camelCase
+2. HTML id --- camelCase
+3. Meteor Template --- camelCase
