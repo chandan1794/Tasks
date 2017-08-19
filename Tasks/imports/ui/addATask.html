@@ -1,4 +1,16 @@
 <template name="addATask">
     <div class="row">
+        <div class="col-md-10" align="center">
+            <form class="form-vertical">
+                <textarea id="formTask" rows="3" placeholder="Add a task less than 50 words."></textarea>
+                <select id="formAssignedTo">
+                    <option disabled>Assigned To </option>
+                    <option val="Person_A">Person A</option>
+                    <option val="Person_B">Person B</option>
+                    <option val="Person_C">Person C</option>
+                </select>
+                <button type="submit" class="btn btn-default pull-right">Add</button>
+            </form>
+        </div>
     </div>
 </template>
