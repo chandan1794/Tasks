@@ -12,6 +12,12 @@
             <div class="alert alert-warning" id="formAssignedToWarning" style="display:none">
                 <strong>Warning! </strong>Select a person to submit the task.
             </div>
+            <div class="alert alert-danger" id="formSubmitError" style="display:none">
+                <strong>Error! </strong>Server error please resubmit the form.
+            </div>
+            <div class="alert alert-success" id="formSubmitSuccess" style="display:none">
+                <strong>Success! </strong>Task submitted successfully!!
+            </div>
         </div>
         <!-- Form to add a task -->
         <div class="col-md-12">
@@ -49,12 +55,16 @@
         // Script to count number of chracters left.
         $("#formTask").keyup(function(event){
             // to update number of character remaining in the task field
-            $("#remainCharacter").text( 140 - $(this).val().length -1);
+            $("#remainCharacter").text( 140 - $(this).val().length);
         });
 
 
         // Script to alert user about choosing a user to assign to task.
         $("#addATaskForm").submit(function(event){
+            // Hide the alerts from old submits.
+            $('#formSubmitSuccess').css('display','none');
+            $('#formSubmitError').css('display','none');
+
             // variable to decide whether to submit the form or not.
             var submitOrNot = true;
             //Task should not be empty.
