@@ -16,3 +16,7 @@ Requirements:
 9. Registration Form:
 	Email id:
 	Password
+
+Schema:
+	1. Task ( task, assignedBy, assignedTo, dateOfAssignment, dateOfCompletion, status )
+	2. User ( email, password )
