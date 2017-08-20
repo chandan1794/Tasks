@@ -3,16 +3,16 @@
         <div class="col-md-12">
             <table class="table table-condensed table-hover">
                 <thead>
-                    <tr>
-                        <td class="col-md-6">Task</td>
-                        <td>Assigned To</td>
-                        <td>Assigned By</td>
-                        <td>Date</td>
+                    <tr align="center">
+                        <td class="col-md-6"><strong>Task</strong></td>
+                        <td><strong>Assigned To</strong></td>
+                        <td><strong>Assigned By</strong></td>
+                        <td><strong>Date</strong></td>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each AllTasks}}
-                        {{>singleTask task=this.task assignedBy=this.assignedBy assignedTo=this.assignedTo date=this.dateOfAssignment}}
+                        {{>singleTask Task=this}}
                     {{/each}}
                 </tbody>
             </table>
