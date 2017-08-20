@@ -1,8 +1,8 @@
 <template name="singleTask">
-    <tr>
-        <td>{{task}}</td>
-        <td>{{assignedBy}}</td>
-        <td>{{assignedTo}}</td>
-        <td>{{date}}</td>
+    <tr class="{{ GetStatus Task.status }}">
+        <td>{{Task.task}}</td>
+        <td>{{Task.assignedBy}}</td>
+        <td>{{Task.assignedTo}}</td>
+        <td>{{Task.dateOfAssignment}}</td>
     </tr>
 </template>
