@@ -29,9 +29,9 @@
                 <div class="col-md-3">
                     <select id="formAssignedTo" class="form-control">
                         <option selected disabled>Assigned To</option>
-                        <option val="Person_A">Person A</option>
-                        <option val="Person_B">Person B</option>
-                        <option val="Person_C">Person C</option>
+                        {{#each AllPeople}}
+                        <option val={{username}}>{{username}}</option>
+                        {{/each}}
                     </select>
                 </div>
                 <div class="col-md-1">

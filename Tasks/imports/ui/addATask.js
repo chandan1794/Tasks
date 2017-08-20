@@ -3,6 +3,22 @@ import { tasks } from '../api/collections.js';
 import { TASK_STATUS } from '../api/constants.js';
 import './addATask.html';
 
+Template.addATask.helpers({
+    //Functions to add people names to the select box
+    // Not to add the current user.
+    // A person should not assign tasks to themselves.
+    AllPeople: function(){
+        var allUsers =  Meteor.users.find({}).fetch();
+        var allUsersNotCurrent = [];
+        allUsers.forEach(function(user){
+            if(user.username !== Meteor.user().username)
+                allUsersNotCurrent.push(user);
+        });
+
+        return allUsersNotCurrent;
+    }
+})
+
 Template.addATask.events({
     'submit #addATaskForm' : function(event){
         event.preventDefault();
