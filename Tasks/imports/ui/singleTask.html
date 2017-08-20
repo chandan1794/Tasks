@@ -4,7 +4,7 @@
         <td>{{Task.assignedBy}}</td>
         <td>{{ExtractDate Task.dateOfAssignment}}</td>
         {{#if IsTaskPending Task.status}}
-        <td><button class="btn btn-block btn-success">Submit</button></td>
+        <td><button id="singleTaskToSubmit" class="btn btn-block btn-success" type="button" data-id="{{Task._id}}">Submit</button></td>
         {{/if}}
         {{#if IsTaskSubmitted Task.status}}
         <td>Task is being reviewed.</td>
