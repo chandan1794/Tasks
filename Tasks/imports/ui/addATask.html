@@ -3,8 +3,14 @@
     <div class="row">
         <!-- Warnings and errors for form -->
         <div class="col-md-12">
-            <div class="alert alert-warning" id="formTaskWarning" style="display:none">
+            <div class="alert alert-warning" id="formTaskLimitWarning" style="display:none">
                 <strong>Warning! </strong>Reached the character limit.
+            </div>
+            <div class="alert alert-danger" id="formTaskEmptyError" style="display:none">
+                <strong>Error! </strong>Task Cannot be empty.
+            </div>
+            <div class="alert alert-warning" id="formAssignedToWarning" style="display:none">
+                <strong>Warning! </strong>Select a person to submit the task.
             </div>
         </div>
         <!-- Form to add a task -->
@@ -37,11 +43,32 @@
 
             // to update the display property according to remaining number of characters
             if($(this).val().length == 140){
-                $("#formTaskWarning").css("display","block");
+                $("#formTaskLimitWarning").css("display","block");
             }else{
-                $("#formTaskWarning").css("display","none");
+                $("#formTaskLimitWarning").css("display","none");
             }
         });
+
+        // Script to alert user about choosing a user to assign to task.
+        $("#addATaskForm").submit(function(event){
+            // variable to decide whether to submit the form or not.
+            var submitOrNot = true;
+            //Task should not be empty.
+            if(!$("#formTask").val().length){
+                $("#formTaskEmptyError").css("display","block");
+                submitOrNot = false;
+            }else{
+                $("#formTaskEmptyError").css("display","none");
+            }
+            //Should have selected a person.
+            if(!$("#formAssignedTo").val()){
+                $("#formAssignedToWarning").css("display","block");
+                submitOrNot = false;
+            }else{
+                $("#formAssignedToWarning").css("display","none");
+            }
+            return submitOrNot;
+        })
     </script>
 </div>
 </template>
