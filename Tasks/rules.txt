@@ -25,3 +25,4 @@
 
 1. functions --- FirstCaps
 2. variable --- camelCaps
+3. all constants --- CAPS_WITH_UNDERSCORES
