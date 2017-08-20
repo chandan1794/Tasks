@@ -2,6 +2,6 @@
     <tr class="{{ GetStatus Task.status }}">
         <td>{{Task.task}}</td>
         <td>{{Task.assignedBy}}</td>
-        <td>{{Task.dateOfAssignment}}</td>
+        <td>{{ExtractDate Task.dateOfAssignment}}</td>
     </tr>
 </template>
