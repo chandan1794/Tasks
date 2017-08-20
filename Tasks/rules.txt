@@ -19,3 +19,9 @@
 
 1. all columns name --- camelCase
 2. all tables name --- camelCase starts with tbl
+
+##################################################################
+###################### All Js Code ###############################
+
+1. functions --- FirstCaps
+2. variable --- camelCaps
