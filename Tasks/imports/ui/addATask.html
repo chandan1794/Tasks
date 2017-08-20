@@ -38,9 +38,6 @@
     <script>
         // Script to alert user about character limit.
         $("#formTask").keypress(function(event){
-            // to update number of character remaining in the task field
-            $("#remainCharacter").text( 140 - $(this).val().length );
-
             // to update the display property according to remaining number of characters
             if($(this).val().length == 140){
                 $("#formTaskLimitWarning").css("display","block");
@@ -48,6 +45,13 @@
                 $("#formTaskLimitWarning").css("display","none");
             }
         });
+
+        // Script to count number of chracters left.
+        $("#formTask").keyup(function(event){
+            // to update number of character remaining in the task field
+            $("#remainCharacter").text( 140 - $(this).val().length -1);
+        });
+
 
         // Script to alert user about choosing a user to assign to task.
         $("#addATaskForm").submit(function(event){
