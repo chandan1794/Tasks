@@ -33,8 +33,13 @@ form div {
     border-bottom: 1px dotted darkgray;
 }
 
-#addATaskForm div{
+#addATaskForm div {
     padding: 0 3px;
+}
+
+#addATaskForm div #supportText {
+    font-size: 0.7em;
+    font-weight: 600;
 }
 
 #loginBox {
