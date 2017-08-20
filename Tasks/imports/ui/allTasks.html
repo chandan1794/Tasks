@@ -11,7 +11,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{>singleTask task="Help Me God" assignedBy="Me" assignedTo="You" date="today"}}
+                    {{#each AllTasks}}
+                        {{>singleTask task=this.task assignedBy=this.assignedBy assignedTo=this.assignedTo date=this.dateOfAssignment}}
+                    {{/each}}
                 </tbody>
             </table>
         </div>
