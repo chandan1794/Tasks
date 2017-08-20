@@ -36,3 +36,8 @@ form div {
 #addATaskForm div{
     padding: 0 3px;
 }
+
+#loginBox {
+    border:2px solid gray;
+    padding:5px
+}
