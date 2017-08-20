@@ -5,6 +5,6 @@ import { tasks } from '../api/collections.js';
 
 Template.allTasks.helpers({
     AllTasks: function(){
-        return tasks.find({}, { "sort": { "dateOfAssignment" :-1 }});
+        return tasks.find({"assignedTo":Meteor.user().username}, { "sort": { "dateOfAssignment" :-1 }});
     }
 })
