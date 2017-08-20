@@ -4,3 +4,8 @@ export const TASK_STATUS = {
     "APPROVED": "Approved",
     "REASSIGNED": "Reassigned"
 };
+
+export const USER_ROLE = {
+    "ASSIGNER": "Assigner",
+    "RECIEVER": "Reciever"
+};
