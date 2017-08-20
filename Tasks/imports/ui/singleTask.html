@@ -22,8 +22,8 @@
             <td>{{ExtractDate Task.dateOfAssignment}}</td>
             {{#if IsTaskSubmitted Task.status}}
             <td>
-                <button class="btn btn-success">Approve</button>
-                <button class="btn btn-warning">Reassign</button>
+                <button class="btn btn-success" id="singleTaskByApprove" type="button" data-id="{{ Task._id }}">Approve</button>
+                <button class="btn btn-warning" id="singleTaskByReassign" type="button" data-id="{{ Task._id }}">Reassign</button>
             </td>
             {{/if}}
             {{#if IsTaskPending Task.status}}

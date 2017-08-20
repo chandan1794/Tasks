@@ -62,3 +62,27 @@ Template.singleTaskBy.helpers({
         return TASK_STATUS["PENDING"] === status || TASK_STATUS["REASSIGNED"] === status;
     },
 })
+
+Template.singleTaskBy.events({
+    'click #singleTaskByApprove': function(event){
+        var taskId = $("#singleTaskByApprove").data('id');
+        tasks.update({ '_id': taskId },
+                    {
+                     '$set':{
+                         'status':TASK_STATUS["APPROVED"]
+                            }
+                    });
+        return false;
+    },
+
+    'click #singleTaskByReassign': function(event){
+        var taskId = $("#singleTaskByReassign").data('id');
+        tasks.update({ '_id': taskId },
+                    {
+                     '$set':{
+                         'status':TASK_STATUS["REASSIGNED"]
+                            }
+                    });
+        return false;
+    }
+})
