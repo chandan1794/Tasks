@@ -14,7 +14,6 @@ Template.addATask.helpers({
             if(user.username !== Meteor.user().username)
                 allUsersNotCurrent.push(user);
         });
-
         return allUsersNotCurrent;
     }
 })
