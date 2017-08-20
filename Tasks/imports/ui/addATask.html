@@ -65,22 +65,25 @@
             $('#formSubmitSuccess').css('display','none');
             $('#formSubmitError').css('display','none');
 
-            // variable to decide whether to submit the form or not.
+            // Variable to decide whether to submit the form or not.
             var submitOrNot = true;
-            //Task should not be empty.
+
+            // Task should not be empty.
             if(!$("#formTask").val().length){
                 $("#formTaskEmptyError").css("display","block");
                 submitOrNot = false;
             }else{
                 $("#formTaskEmptyError").css("display","none");
             }
-            //Should have selected a person.
+
+            // Should have selected a person.
             if(!$("#formAssignedTo").val()){
                 $("#formAssignedToWarning").css("display","block");
                 submitOrNot = false;
             }else{
                 $("#formAssignedToWarning").css("display","none");
             }
+
             return submitOrNot;
         })
     </script>

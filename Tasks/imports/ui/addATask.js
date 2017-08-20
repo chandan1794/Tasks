@@ -16,7 +16,7 @@ Template.addATask.events({
         }, function(error){
             if(error){
                 $('#formSubmitError').css('display','block');
-                return false;
+                return false; //Prevent page from reloading
             }else{
                 $('#formSubmitSuccess').css('display','block');
                 document.getElementById("addATaskForm").reset(); //Resetting form to initial values
