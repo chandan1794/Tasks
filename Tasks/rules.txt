@@ -18,3 +18,4 @@
 ####################### Mongodb ####################################
 
 1. all columns name --- camelCase
+2. all tables name --- camelCase starts with tbl
