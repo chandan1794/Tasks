@@ -1,5 +1,6 @@
 <template name="allTasks">
     <div class="row" id="allTasksList">
+         <!-- All tasks which are assigned to current user -->
         <div class="col-md-12">
             <table class="table table-condensed table-hover">
                 <thead>
@@ -7,15 +8,18 @@
                         <td><strong>Task</strong></td>
                         <td><strong>Assigned By</strong></td>
                         <td><strong>Date</strong></td>
+                        <td><strong>Done?</strong></td>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each AllTasks "Reciever"}}
-                        {{>singleTask Task=this}}
+                        {{>singleTaskTo Task=this}}
                     {{/each}}
                 </tbody>
             </table>
         </div>
+
+         <!-- All tasks which are assigned by current user -->
         <div class="col-md-12">
                 <table class="table table-condensed table-hover">
                     <thead>
@@ -23,11 +27,12 @@
                             <td><strong>Task</strong></td>
                             <td><strong>Assigned To</strong></td>
                             <td><strong>Date</strong></td>
+                            <td><strong>Accept/Reassign</strong></td>
                         </tr>
                     </thead>
                     <tbody>
                         {{#each AllTasks "Assigner"}}
-                            {{>singleTask Task=this}}
+                            {{>singleTaskBy Task=this}}
                         {{/each}}
                     </tbody>
                 </table>
