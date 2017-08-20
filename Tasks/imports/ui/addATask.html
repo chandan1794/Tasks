@@ -1,10 +1,18 @@
 <template name="addATask">
     <div id="addATaskOuterDiv">
     <div class="row">
+        <!-- Warnings and errors for form -->
+        <div class="col-md-12">
+            <div class="alert alert-warning" id="formTaskWarning" style="display:none">
+                <strong>Warning! </strong>Reached the character limit.
+            </div>
+        </div>
+        <!-- Form to add a task -->
         <div class="col-md-12">
             <form class="form-vertical" id="addATaskForm">
-                <div class="col-md-8" >
-                    <textarea id="formTask" rows="1" class="form-control" placeholder="Add a task less than 50 words."></textarea>
+                <div class="col-md-8">
+                    <input id="formTask" rows="1" maxlength="140" class="form-control" placeholder="Add a task less than 140 characters.">
+                    <p class="pull-right">Characters Left: <span id="remainCharacter">140</span></p>
                 </div>
                 <div class="col-md-3">
                     <select id="formAssignedTo" class="form-control">
@@ -20,5 +28,20 @@
             </form>
         </div>
     </div>
+    <!-- Scripts to check validity of form -->
+    <script>
+        // Script to alert user about character limit.
+        $("#formTask").keypress(function(event){
+            // to update number of character remaining in the task field
+            $("#remainCharacter").text( 140 - $(this).val().length );
+
+            // to update the display property according to remaining number of characters
+            if($(this).val().length == 140){
+                $("#formTaskWarning").css("display","block");
+            }else{
+                $("#formTaskWarning").css("display","none");
+            }
+        });
+    </script>
 </div>
 </template>
