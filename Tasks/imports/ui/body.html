@@ -1,4 +1,5 @@
 <body>
+    {{> navigationBar }}
     <div class="container">
         <div class="jumbotron">
             <h1 class="h1">Tasks</h1>
@@ -9,7 +10,7 @@
             {{> addATask}}
             <!-- Place to show all the task -->
             {{> allTasks}}
-        {{else}}
+        {{ else }}
             <div class="col-md-6 col-md-offset-3" align="center">
                 <h4> To use the app Signin/Signup first. </h4>
             </div>
