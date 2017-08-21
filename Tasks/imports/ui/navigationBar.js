@@ -6,7 +6,7 @@ Template.navigationBar.events({
             if(error){
                 alert("Error in logging out!!");
             }else{
-                alert("Succefully Logged Out!!");
+                alert("Successfully Logged Out!!");
             }
         })
     }
