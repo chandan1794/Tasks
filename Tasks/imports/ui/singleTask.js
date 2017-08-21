@@ -69,7 +69,8 @@ Template.singleTaskBy.events({
         tasks.update({ '_id': taskId },
                     {
                      '$set':{
-                         'status':TASK_STATUS["APPROVED"]
+                         'status':TASK_STATUS["APPROVED"],
+                         'dateOfCompletion':new Date()
                             }
                     });
         return false;
