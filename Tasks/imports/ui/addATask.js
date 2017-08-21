@@ -35,6 +35,7 @@ Template.addATask.events({
             }else{
                 $('#formSubmitSuccess').css('display','block');
                 document.getElementById("addATaskForm").reset(); //Resetting form to initial values
+                $('#remainCharacter').text("140");
                 return false;
             }
         });
