@@ -1,10 +1,10 @@
 <template name="allTasks">
     <div class="row" id="allTasksList">
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" data-toggle="collapse" data-target="#taskTo">
                 <h4>Task assigned to you</h4>
             </div>
-            <div class="panel-body">
+            <div class="panel-body collapse fade" id="taskTo">
                 <!-- All tasks which are assigned to current user -->
                 <div class="col-md-12">
                     <table class="table table-condensed table-hover">
@@ -27,10 +27,10 @@
         </div>
 
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" data-toggle="collapse" data-target="#taskBy">
                 <h4>Task assigned by you</h4>
             </div>
-            <div class="panel-body">
+            <div class="panel-body collapse fade" id="taskBy">
                 <!-- All tasks which are assigned by current user -->
                 <div class="col-md-12">
                     <table class="table table-condensed table-hover">
