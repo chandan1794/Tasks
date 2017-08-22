@@ -1,41 +1,55 @@
 <template name="allTasks">
     <div class="row" id="allTasksList">
-         <!-- All tasks which are assigned to current user -->
-        <div class="col-md-12">
-            <table class="table table-condensed table-hover">
-                <thead>
-                    <tr>
-                        <td><strong>Task</strong></td>
-                        <td><strong>Assigned By</strong></td>
-                        <td><strong>Date</strong></td>
-                        <td><strong>Done?</strong></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each AllTasks "Reciever"}}
-                        {{>singleTaskTo Task=this}}
-                    {{/each}}
-                </tbody>
-            </table>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Task assigned to you</h4>
+            </div>
+            <div class="panel-body">
+                <!-- All tasks which are assigned to current user -->
+                <div class="col-md-12">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <td><strong>Task</strong></td>
+                                <td><strong>Assigned By</strong></td>
+                                <td><strong>Date</strong></td>
+                                <td><strong>Done?</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each AllTasks "Reciever"}}
+                                {{>singleTaskTo Task=this}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-         <!-- All tasks which are assigned by current user -->
-        <div class="col-md-12">
-                <table class="table table-condensed table-hover">
-                    <thead>
-                        <tr>
-                            <td><strong>Task</strong></td>
-                            <td><strong>Assigned To</strong></td>
-                            <td><strong>Date</strong></td>
-                            <td><strong>Accept/Reassign</strong></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each AllTasks "Assigner"}}
-                            {{>singleTaskBy Task=this}}
-                        {{/each}}
-                    </tbody>
-                </table>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Task assigned by you</h4>
             </div>
+            <div class="panel-body">
+                <!-- All tasks which are assigned by current user -->
+                <div class="col-md-12">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <td><strong>Task</strong></td>
+                                <td><strong>Assigned To</strong></td>
+                                <td><strong>Date</strong></td>
+                                <td><strong>Accept/Reassign</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each AllTasks "Assigner"}}
+                                {{>singleTaskBy Task=this}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
