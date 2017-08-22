@@ -5,6 +5,10 @@
     max-width: 1000px;
 }
 
+.jumbotron {
+    margin-bottom:0;
+}
+
 #allTasksList {
     margin-right: 15px;
     margin-left: 15px;
@@ -27,9 +31,10 @@ form div {
 .title div p {
     margin: 0;
 }
+
 #addATaskOuterDiv {
     margin: 0 15px;
-    border-bottom: 1px dotted darkgray;
+    padding-top:50px;
 }
 
 #addATaskForm div {
