@@ -3,7 +3,6 @@ import './singleTask.html';
 import { TASK_STATUS } from '../api/constants.js';
 import { MapStatus, ConstructDate } from '../api/helperFunctions.js';
 import { tasks } from '../api/collections.js';
-import './taskEditForm.js';
 Template.singleTaskTo.helpers({
     GetStatus: function(status){
         return MapStatus(status, TASK_STATUS);
