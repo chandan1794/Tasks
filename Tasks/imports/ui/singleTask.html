@@ -7,17 +7,24 @@
         <td><button id="singleTaskToSubmit" class="btn btn-block btn-success" type="button" data-id="{{Task._id}}">Submit</button></td>
         {{/if}}
         {{#if IsTaskSubmitted Task.status}}
-        <td>Task is being reviewed.</td>
+            <td>Task is being reviewed.</td>
         {{/if}}
         {{#if IsTaskApproved Task.status}}
-        <td>Task has been completed.</td>
+            <td>Task has been completed.</td>
         {{/if}}
     </tr>
 </template>
 
 <template name="singleTaskBy">
         <tr class="{{ GetStatus Task.status }}">
-            <td>{{Task.task}}</td>
+            <td>
+                {{Task.task}}
+                {{#if IsTaskPending Task.status}}
+                    <a class="btn btn-link">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                {{/if}}
+            </td>
             <td>{{Task.assignedTo}}</td>
             <td>{{ExtractDate Task.dateOfAssignment}}</td>
             {{#if IsTaskSubmitted Task.status}}
@@ -27,10 +34,10 @@
             </td>
             {{/if}}
             {{#if IsTaskPending Task.status}}
-            <td>Task has been assigned.</td>
+                <td>Task has been assigned.</td>
             {{/if}}
             {{#if IsTaskApproved Task.status}}
-            <td>Task has been completed.</td>
+                <td>Task has been completed.</td>
             {{/if}}
         </tr>
     </template>
