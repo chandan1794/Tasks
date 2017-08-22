@@ -85,5 +85,14 @@ Template.singleTaskBy.events({
                             }
                     });
         return false;
+    },
+
+    'click #editTask': function(event){
+        var taskId = this.Task._id;
+        var task = this.Task.task;
+        var assignedTo =this.Task.assignedTo;
+        $("#formTask").val(task);
+        $("#formAssignedTo").val(assignedTo);
+        return true;
     }
 })

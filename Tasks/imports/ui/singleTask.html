@@ -20,7 +20,8 @@
             <td>
                 {{Task.task}}
                 {{#if IsTaskPending Task.status}}
-                    <a class="btn btn-link" id="editTask" data-id="{{Task._id}}" data-toggle="modal" data-target="#taskEditForm">
+                    <a class="btn btn-link" id="editTask" data-id="{{Task._id}}" data-task="{{Task.task}}" 
+                    data-assigned-to="{{Task.assignedTo}}" href="#addATaskOuterDiv">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </a>
                 {{/if}}
