@@ -36,6 +36,10 @@ Template.singleTaskTo.events({
                             }
                     });
         return false;
+    },
+
+    'click #deleteTask': function(event){
+        tasks.remove({ '_id': this.Task._id });
     }
 })
 
@@ -93,5 +97,9 @@ Template.singleTaskBy.events({
         $("#formTask").val(task);
         $("#formAssignedTo").val(assignedTo);
         return true;
+    },
+
+    'click #deleteTask': function(event){
+        tasks.remove({ '_id': this.Task._id });
     }
 })
