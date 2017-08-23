@@ -1,10 +1,14 @@
 <template name="singleTaskTo">
     <tr class="{{ GetStatus Task.status }}">
-        <td>{{Task.task}}</td>
+        <td>{{Task.task}}
+            {{#if IsTaskApproved Task.status}}
+                <i class="fa fa-trash" aria-hidden="true" style="color:red" id="deleteTask"></i>
+            {{/if}}
+        </td>
         <td>{{Task.assignedBy}}</td>
         <td>{{ExtractDate Task.dateOfAssignment}}</td>
         {{#if IsTaskPending Task.status}}
-        <td><button id="singleTaskToSubmit" class="btn btn-block btn-success" type="button" data-id="{{Task._id}}">Submit</button></td>
+            <td><button id="singleTaskToSubmit" class="btn btn-block btn-success" type="button" data-id="{{Task._id}}">Submit</button></td>
         {{/if}}
         {{#if IsTaskSubmitted Task.status}}
             <td>Task is being reviewed.</td>
@@ -20,10 +24,11 @@
             <td>
                 {{Task.task}}
                 {{#if IsTaskPending Task.status}}
-                    <a class="btn btn-link" id="editTask" data-id="{{Task._id}}" data-task="{{Task.task}}" 
-                    data-assigned-to="{{Task.assignedTo}}" href="#addATaskOuterDiv">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </a>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true" id="editTask"></i>
+                {{/if}}
+                {{#if IsTaskSubmitted Task.status}}
+                {{else}}
+                    <i class="fa fa-trash" aria-hidden="true" style="color:red" id="deleteTask"></i>
                 {{/if}}
             </td>
             <td>{{Task.assignedTo}}</td>
